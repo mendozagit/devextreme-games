@@ -9,6 +9,10 @@ export class Service {
   getTasks() {
     return tasks;
   }
+
+  getActivities() {
+    return generateActivities(tasks);
+  }
 }
 
 export class Task {
@@ -28,6 +32,8 @@ export class Task {
 
   EmployeeID?: number;
 }
+
+
 
 export class Employee {
   ID?: number;
@@ -497,3 +503,40 @@ const tasks: Task[] = [{
   Completion: 25,
   EmployeeID: 6,
 }];
+
+export class Activity {
+  ID?: number;
+  Subject?: string;
+  Description?: string;
+  Completion?: number;
+  TaskID?: number;
+}
+
+// const activities: Activity[] = [{
+//   ID: 1,
+//   Subject: 'Prepare 2013 Financial',
+//   Description: 'Prepare 2013 Financial',
+//   Completion: 100,
+//   TaskID: 1,
+// }];
+
+// Function to generate random activities for each task
+function generateActivities(tasks: Task[]): Activity[] {
+  const activities: Activity[] = [];
+  let activityId = 1; // Initialize an ID for activities
+
+  tasks.forEach(task => {
+    const numberOfActivities = Math.floor(Math.random() * 3) + 3; // Generate between 3 and 5 activities per task
+    for (let i = 0; i < numberOfActivities; i++) {
+      activities.push({
+        ID: activityId++,
+        Subject: `${task.Subject} Activity ${i + 1}`,
+        Description: `Detailed description for ${task.Subject} activity ${i + 1}`,
+        Completion: Math.floor(Math.random() * 100), // Random completion percentage
+        TaskID: task.ID
+      });
+    }
+  });
+
+  return activities;
+}
