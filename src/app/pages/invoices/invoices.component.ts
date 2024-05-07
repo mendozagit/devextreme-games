@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Employee, Service } from './invoice.service';
 
 @Component({
   selector: 'app-invoices',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrl: './invoices.component.scss'
 })
 export class InvoicesComponent {
+  employees: Employee[];
 
+  constructor(private service: Service) {
+    this.employees = service.getEmployees();
+  }
 }

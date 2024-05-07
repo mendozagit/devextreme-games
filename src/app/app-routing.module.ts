@@ -7,6 +7,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { TasksComponent } from './pages/tasks/tasks.component';
 import { DxDataGridModule, DxFormModule } from 'devextreme-angular';
 import { InvoicesComponent } from './pages/invoices/invoices.component';
+import { DetailGridComponent } from './pages/invoices/detail-grid.component';
 
 const routes: Routes = [
   {
@@ -63,7 +64,8 @@ const routes: Routes = [
     HomeComponent,
     ProfileComponent,
     TasksComponent,
-    InvoicesComponent
+    InvoicesComponent,
+    DetailGridComponent
   ]
 })
 export class AppRoutingModule { }
