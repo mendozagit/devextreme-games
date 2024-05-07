@@ -5,6 +5,9 @@
   [dataSource]="employees"
   keyExpr="ID"
   [showBorders]="true"
+  [allowColumnReordering]="true"
+  [focusedRowEnabled]="true"
+
 >
   <dxi-column dataField="Prefix" [width]="70" caption="Title"></dxi-column>
   <dxi-column dataField="FirstName"></dxi-column>
@@ -12,11 +15,16 @@
   <dxi-column dataField="Position" [width]="170"></dxi-column>
   <dxi-column dataField="State" [width]="125"></dxi-column>
   <dxi-column dataField="BirthDate" dataType="date"></dxi-column>
-  <dxo-master-detail [enabled]="true" template="detail"></dxo-master-detail>
+
+  <dxo-master-detail
+    [enabled]="true"
+    template="detail">
+  </dxo-master-detail>
+
   <div *dxTemplate="let employee of 'detail'">
-    <div class="master-detail-caption">{{
-      employee.data.FirstName + " " + employee.data.LastName + "'s Tasks:"
-    }}</div>
-    <detail-grid [key]="employee.key"></detail-grid>
+    <div class="master-detail-caption">
+      {{ employee.data.FirstName + " " + employee.data.LastName + "'s Tasks:"}}
+    </div>
+  <detail-grid [key]="employee.key"></detail-grid>
   </div>
 </dx-data-grid>
