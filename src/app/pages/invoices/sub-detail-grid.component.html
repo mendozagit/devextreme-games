@@ -1,0 +1,30 @@
+<dx-data-grid
+  [dataSource]="activitiesDataSource"
+  [showBorders]="true"
+  [columnAutoWidth]="true"
+  [allowColumnReordering]="true"
+  [focusedRowEnabled]="true"
+>
+
+<!-- ID?: number;
+  Subject?: string;
+  Description?: string;
+  Completion?: number;
+  TaskID?: number; -->
+
+
+  <!-- <dxi-column dataField="Subject" dataType="string"></dxi-column>
+  <dxi-column dataField="Description?" dataType="string"></dxi-column>
+  <dxi-column dataField="Completion?"caption="Completed" dataType="boolean" [calculateCellValue]="completedValue"></dxi-column> -->
+
+  <!-- <dxo-master-detail
+    [enabled]="true"
+    template="tasks">
+  </dxo-master-detail>
+
+  <div *dxTemplate="let task of 'tasks'">
+    <div> {{ task.data.Subject + "'s Activities:"}} </div>
+    <detail-grid [key]="task.key"></detail-grid>
+  </div> -->
+</dx-data-grid>
+

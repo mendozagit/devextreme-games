@@ -10,4 +10,14 @@
   <dxi-column dataField="DueDate" dataType="date"></dxi-column>
   <dxi-column dataField="Priority" dataType="string"></dxi-column>
   <dxi-column caption="Completed" dataType="boolean" [calculateCellValue]="completedValue"></dxi-column>
+
+  <dxo-master-detail
+    [enabled]="true"
+    template="tasks">
+  </dxo-master-detail>
+
+  <div *dxTemplate="let task of 'tasks'">
+    <div> {{ task.data.Subject + "'s Activities:"}} </div>
+    <sub-detail-grid [key]="task.key"></sub-detail-grid>
+  </div>
 </dx-data-grid>

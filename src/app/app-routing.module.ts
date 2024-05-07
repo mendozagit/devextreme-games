@@ -9,6 +9,7 @@ import { DxDataGridModule, DxFormModule } from 'devextreme-angular';
 import { InvoicesComponent } from './pages/invoices/invoices.component';
 import { DetailGridComponent } from './pages/invoices/detail-grid.component';
 import { CommonModule } from '@angular/common';
+import { SubDetailGridComponent } from './pages/invoices/sub-detail-grid.component';
 
 const routes: Routes = [
   {
@@ -66,7 +67,8 @@ const routes: Routes = [
     ProfileComponent,
     TasksComponent,
     InvoicesComponent,
-    DetailGridComponent
+    DetailGridComponent,
+    SubDetailGridComponent
   ]
 })
 export class AppRoutingModule { }

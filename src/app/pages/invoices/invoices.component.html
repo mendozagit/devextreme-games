@@ -18,10 +18,10 @@
 
   <dxo-master-detail
     [enabled]="true"
-    template="items">
+    template="employees">
   </dxo-master-detail>
 
-  <div *dxTemplate="let employee of 'items'">
+  <div *dxTemplate="let employee of 'employees'">
     <div> {{ employee.data.FirstName + " " + employee.data.LastName + "'s Tasks:"}} </div>
     <detail-grid [key]="employee.key"></detail-grid>
   </div>
