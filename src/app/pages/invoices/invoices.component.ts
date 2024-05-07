@@ -4,7 +4,7 @@ import { Employee, Service } from './invoice.service';
 @Component({
   selector: 'app-invoices',
   templateUrl: './invoices.component.html',
-  styleUrl: './invoices.component.scss'
+  styleUrl: './invoices.component.scss',
 })
 export class InvoicesComponent {
   employees: Employee[];

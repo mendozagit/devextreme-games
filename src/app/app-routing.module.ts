@@ -8,6 +8,7 @@ import { TasksComponent } from './pages/tasks/tasks.component';
 import { DxDataGridModule, DxFormModule } from 'devextreme-angular';
 import { InvoicesComponent } from './pages/invoices/invoices.component';
 import { DetailGridComponent } from './pages/invoices/detail-grid.component';
+import { CommonModule } from '@angular/common';
 
 const routes: Routes = [
   {
@@ -57,7 +58,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { useHash: true }), DxDataGridModule, DxFormModule],
+  imports: [RouterModule.forRoot(routes, { useHash: true }), DxDataGridModule, DxFormModule, CommonModule],
   providers: [AuthGuardService],
   exports: [RouterModule],
   declarations: [
