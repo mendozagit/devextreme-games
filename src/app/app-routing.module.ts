@@ -6,8 +6,14 @@ import { HomeComponent } from './pages/home/home.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { TasksComponent } from './pages/tasks/tasks.component';
 import { DxDataGridModule, DxFormModule } from 'devextreme-angular';
+import { InvoicesComponent } from './pages/invoices/invoices.component';
 
 const routes: Routes = [
+  {
+    path: 'invoices',
+    component: InvoicesComponent,
+    canActivate: [ AuthGuardService ]
+  },
   {
     path: 'tasks',
     component: TasksComponent,
@@ -56,7 +62,8 @@ const routes: Routes = [
   declarations: [
     HomeComponent,
     ProfileComponent,
-    TasksComponent
+    TasksComponent,
+    InvoicesComponent
   ]
 })
 export class AppRoutingModule { }
