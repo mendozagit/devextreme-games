@@ -10,8 +10,20 @@ import { InvoicesComponent } from './pages/invoices/invoices.component';
 import { DetailGridComponent } from './pages/invoices/detail-grid.component';
 import { CommonModule } from '@angular/common';
 import { SubDetailGridComponent } from './pages/invoices/sub-detail-grid.component';
+import { TaskListComponent } from './pages/task-list/task-list.component';
+import { TaskDetailsComponent } from './pages/task-details/task-details.component';
 
 const routes: Routes = [
+  {
+    path: 'task-details',
+    component: TaskDetailsComponent,
+    canActivate: [ AuthGuardService ]
+  },
+  {
+    path: 'task-list',
+    component: TaskListComponent,
+    canActivate: [ AuthGuardService ]
+  },
   {
     path: 'invoices',
     component: InvoicesComponent,
@@ -68,7 +80,8 @@ const routes: Routes = [
     TasksComponent,
     InvoicesComponent,
     DetailGridComponent,
-    SubDetailGridComponent
+    SubDetailGridComponent,
+    TaskDetailsComponent
   ]
 })
 export class AppRoutingModule { }

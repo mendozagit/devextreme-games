@@ -21,5 +21,19 @@ export const navigation = [
         path: '/tasks'
       }
     ]
+  },
+  {
+    text: 'Planning',
+    icon: 'taskcomplete',
+    items: [
+      {
+        text: 'Task List',
+        path: '/task-list'
+      },
+      {
+        text: 'Task-details',
+        path: '/task-details'
+      }
+    ]
   }
 ];
