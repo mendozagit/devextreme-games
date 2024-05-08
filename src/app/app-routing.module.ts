@@ -5,7 +5,7 @@ import { AuthGuardService } from './shared/services';
 import { HomeComponent } from './pages/home/home.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { TasksComponent } from './pages/tasks/tasks.component';
-import { DxDataGridModule, DxFormModule } from 'devextreme-angular';
+import { DxButtonModule, DxDataGridModule, DxFormModule, DxTabsModule, DxToolbarModule } from 'devextreme-angular';
 import { InvoicesComponent } from './pages/invoices/invoices.component';
 import { DetailGridComponent } from './pages/invoices/detail-grid.component';
 import { CommonModule } from '@angular/common';
@@ -71,7 +71,14 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { useHash: true }), DxDataGridModule, DxFormModule, CommonModule],
+  imports: [
+     RouterModule.forRoot(routes, { useHash: true }),
+     DxDataGridModule,
+     DxFormModule,
+     DxToolbarModule,
+     DxTabsModule,
+     DxButtonModule,
+     CommonModule],
   providers: [AuthGuardService],
   exports: [RouterModule],
   declarations: [
@@ -81,6 +88,7 @@ const routes: Routes = [
     InvoicesComponent,
     DetailGridComponent,
     SubDetailGridComponent,
+    TaskListComponent,
     TaskDetailsComponent
   ]
 })

@@ -1,1 +1,106 @@
-<p>task-list works!</p>
+<div class="view-wrapper list-page">
+
+
+  <dx-toolbar class="theme-dependent">
+    <dxi-item location="before">
+      <span class="toolbar-header">Tasks</span>
+    </dxi-item>
+    <dxi-item location="before">
+      <dx-tabs
+        secondary="secondary"
+        [width]="(screen.xSmallScreenChanged | async) ? 220 : 'auto'"
+        [showNavButtons]="false"
+        [scrollByContent]="true"
+        [selectedIndex]="0"
+        [items]="taskPanelItems"
+        (onItemClick)="tabValueChange($event)"
+      ></dx-tabs>
+    </dxi-item>
+
+    <dxi-item location="after" locateInMenu="auto">
+      <dx-button
+        icon="plus"
+        text="Add Task"
+        type="default"
+        stylingMode="contained"
+        (onClick)="addTask()"
+      ></dx-button>
+    </dxi-item>
+
+    <dxi-item
+      location="after"
+      locateInMenu="auto"
+      widget="dxButton"
+      showText="inMenu"
+      [options]="{
+        text: 'Refresh',
+        icon: 'refresh',
+        onClick: refresh,
+        stylingMode: 'text'
+      }"
+    ></dxi-item>
+
+    <!-- onClick: chooseColumnDataGrid, -->
+    <dxi-item
+      location="after"
+      locateInMenu="auto"
+      widget="dxButton"
+      showText="inMenu"
+      [disabled]="!displayGrid"
+      [options]="{
+        text: 'Column Chooser',
+        icon: 'columnchooser',
+
+        stylingMode: 'text'
+      }"
+    ></dxi-item>
+
+    <dxi-item location="after" locateInMenu="auto">
+      <div class="separator"></div>
+    </dxi-item>
+
+    <!-- onClick: exportToPdf, -->
+    <dxi-item
+      location="after"
+      locateInMenu="auto"
+      widget="dxButton"
+      showText="inMenu"
+      [disabled]="displayKanban"
+      [options]="{
+        text: 'Export to PDF',
+        icon: 'exportpdf',
+
+        stylingMode: 'text'
+      }"
+    ></dxi-item>
+
+    <!-- onClick: exportDataGridToXSLX, -->
+    <dxi-item
+      location="after"
+      locateInMenu="auto"
+      widget="dxButton"
+      showText="inMenu"
+      [disabled]="!displayGrid"
+      [options]="{
+        text: 'Export to Exel',
+        icon: 'exportxlsx',
+
+        stylingMode: 'text'
+      }"
+    ></dxi-item>
+
+    <!-- onInput: searchDataGrid -->
+    <dxi-item
+      location="after"
+      locateInMenu="auto"
+      widget="dxTextBox"
+      [disabled]="!displayGrid"
+      [options]="{
+        placeholder: 'Task Search',
+        mode: 'search',
+
+      }"
+    ></dxi-item>
+  </dx-toolbar>
+
+</div>
