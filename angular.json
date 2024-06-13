@@ -52,7 +52,12 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                  "glob": "**/*",
+                  "input": "./node_modules/devextreme/dist/css/",
+                  "output": "assets"
+              }
             ],
             "styles": [
               "node_modules/devextreme/dist/css/dx.common.css",
@@ -116,7 +121,12 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                  "glob": "**/*",
+                  "input": "./node_modules/devextreme/dist/css/",
+                  "output": "assets"
+              }
             ],
             "styles": [
               "src/styles.scss"
